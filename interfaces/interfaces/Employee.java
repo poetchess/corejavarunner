@@ -7,6 +7,15 @@ package interfaces;
 //an interface. Comparable x; x = new Employee(...); is OK if Employee
 //implements Comparable.
 
+//Static methods and default methods are allowed in interfaces.
+//Default methods must be tagged as 'default', and are useful in
+//interface evolution.
+
+//Resolving deafult method confilicts:
+//  1. Superclasses win. Redefining one of the methods in 
+//     'Object' class as a default method never succeeds.
+//  2. Interfaces clash. 
+
 //Declaring the class to implement the given interface
 //Supplying definitions for all methods in the interface
 //Classes can implement multiple interfaces.
