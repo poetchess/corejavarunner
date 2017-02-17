@@ -37,6 +37,16 @@ public class LambdaTest {
         //     i.e. String::compareToIgnoreCase <-> 
         //              (x, y) -> x.compareToIgnoreCase(y)
 
+
+        //Variable scope
+        //A lambda expression has three ingredients:
+        //  1. A block of code
+        //  2. Parameters
+        //  3. Values for the free variables
+        //Restrictions on capturing variable in a lambda expression:
+        //  The variable must be effectively final.
+        //The body of a lambda expression has the same scope as a nested block.
+
         Arrays.sort(planets, (first, second) -> 
             first.length() - second.length());
 
