@@ -41,23 +41,34 @@ class BounceFrame extends JFrame
         button.addActionListener(listener);
     }
 
+    // Public interface Runnable { void run(); }
+    // Runnable is a functional interface, we can make an instance with a lambda
+    //   expression: Runnable r = () -> { task code }
+    // Construct a Thread object from the Runnable: Thread t = new Thread(r);
+    // Start the thread: t.start();
+
     public void addBall()
     {
-        try
-        {
-            Ball ball = new Ball();
-            comp.add(ball);
-
-            for (int i = 1; i <= STEPS; i++)
+        Runnable r = () -> {
+            try
             {
-                ball.move(comp.getBounds());
-                comp.paint(comp.getGraphics());
-                Thread.sleep(DELAY);
-            }
+                Ball ball = new Ball();
+                comp.add(ball);
 
-        }
-        catch (InterruptedException e)
-        {
-        }
+                for (int i = 1; i <= STEPS; i++)
+                {
+                    ball.move(comp.getBounds());
+                    comp.paint(comp.getGraphics());
+                    Thread.sleep(DELAY);
+                }
+
+            }
+            catch (InterruptedException e)
+            {
+            }
+        };
+
+        Thread t = new Thread(r);
+        t.start();
     }
 }
