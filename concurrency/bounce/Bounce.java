@@ -47,6 +47,11 @@ class BounceFrame extends JFrame
     // Construct a Thread object from the Runnable: Thread t = new Thread(r);
     // Start the thread: t.start();
 
+    // Do NOT call the 'run' method of the Thread class or the Runnable object.
+    // Calling the 'run' method directly merely executes the task in the same
+    //   thread, no new thread is started. Instead, call the 'Thread.start'
+    //   method. It creates a new thread that executes the 'run' method.
+    
     public void addBall()
     {
         Runnable r = () -> {
