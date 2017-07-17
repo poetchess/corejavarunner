@@ -62,13 +62,13 @@ public class Bank {
             // where it left off, returning from the call to await. At this
             // time, the thread should test the condition again. There is no
             // guarantee that the condition is now fulfilled, signalAll() merely
-            // signals to the waiting threads that is may be fulfilled at this
+            // signals to the waiting threads that it may be fulfilled at this
             // time and that is worth checking for the condition again.
 
             // It is crucially important that 'some' other thread calls the
             // signalAll method eventually. When a thread calls await(), it has
             // no way of reactiving itself. If no other threads bother to
-            // reactive the waiting thread, it will never run again.
+            // reactivate the waiting thread, it will never run again.
 
             // Whenever the state of an object changes in a way that might be
             // advantageous to waiting threads, we should call signalAll().
