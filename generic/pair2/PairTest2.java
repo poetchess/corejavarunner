@@ -17,11 +17,23 @@ public class PairTest2 {
 }
 
 class ArrayAlg {
+
     //Place restrictions on type variables.
     //Violate the restriction will lead to compile time error.
+
+    // The notation <T extends BoundingType> expresses that T should be a subtype
+    // of the bounding type. Both T and the bounding type can be either a class
+    // or an interface. The extends keyword is chosed because it is a reasonable
+    // approximation of the subtype concept.
+
+    // A type variable or wildcard can have multiple bounds, i.e.
+    // T extends Comparable & Serializable
+    // The bounding types are seperated by & because , are used to seperate type vars.
+
     //We can have many interface supertypes, but at most one of the bounds can 
     //be a class. If there's a class as a bound, it must be the first one in
     //the bounds list.
+
     public static <T extends Comparable> Pair<T> minmax(T[] a) {
         if (a == null || a.length == 0)
             return null;
