@@ -4,6 +4,13 @@ import java.io.*;
 import java.util.*;
 import java.util.concurrent.*;
 
+// How to use a thread pool
+// 1. Call the static newCachedThreadPool or newFixedThreadPool method of the Executors class.
+// 2. Call submit to submit Runnable or Callable objects.
+// 3. If we want to be able to cancel a task, or if we submit Callable objects,
+//    hang on to the returned Future objects.
+// 4. Call shutdown when we no longer want to submit any tasks.
+
 public class ThreadPoolTest {
 
     public static void main(String[] args) throws Exception {
